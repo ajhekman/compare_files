@@ -1,3 +1,10 @@
 #!/usr/bin/env ruby
 
 require "compare_files"
+
+options = CompareFiles::Cli.parse!
+
+puts CompareFiles::DiffTools.new_right(
+  CompareFiles::Cli.standardize_input(options.left),
+  CompareFiles::Cli.standardize_input(options.right),
+)
