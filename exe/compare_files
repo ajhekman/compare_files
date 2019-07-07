@@ -4,7 +4,9 @@ require "compare_files"
 
 options = CompareFiles::Cli.parse!
 
-puts CompareFiles::DiffTools.new_right(
-  CompareFiles::Cli.standardize_input(options.left),
-  CompareFiles::Cli.standardize_input(options.right),
-)
+puts CompareFiles.new_left(options.left, options.right)
+
+if options.remember
+  IO.write(options.remember, CompareFiles::Cli.standardize_input(options.left).join("\n"))
+end
+
