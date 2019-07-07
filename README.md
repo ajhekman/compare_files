@@ -11,8 +11,8 @@ To install as a stand-alone executable, install with [specific_install](https://
 
 1. install specific_install `gem install specific_install`
 1. choose to install lastest master, or a specific relase
-    * *latest master*: `gem specific_install --user-install ajhekman/compare_files`
-    * *specific release*: `gem specific_install --user-install --ref <ref> ajhekman/compare_files`
+    * *latest master*: `gem specific_install ajhekman/compare_files`
+    * *specific release*: `gem specific_install --ref <ref> ajhekman/compare_files`
 
 
 **OR** install as a library within your application by addding this line to your application's Gemfile:
