@@ -3,7 +3,7 @@
 A simple utility to compare file membership in two places.
 A "place" may either be a directory, or a text file containing a file per line.
 
-A common use case is to save the output of the `right` item, and use it at a future date as the `left` item. This will list new items since the first comparison was run.
+A common use case is to save the output of the `left` item, and use it at a future date as the `right` item. This will list new items since the first comparison was run.
 
 ## Installation
 
@@ -28,10 +28,22 @@ And then execute:
 ## Usage
 
 ```
-Usage: compare_files [options]
-        --left=LEFT      'old' side to compare against. May be a folder, or text file.
-        --right=RIGHT    'current' side to compare against. May be a folder, or text file.
+Usage: compare_files --left=SRC --right=DEST [--remember=file]
+
+compare_files will output items in LEFT that are not in RIGHT"
+
+Example:
+Remember files from SRC, and output new files since command was
+last run.
+
+    compare_files --left=SRC --right=seen.txt --remember=seen.txt
+
+
+        --left=LEFT      Required. Source side to compare against. May be a folder, or text file.
+        --right=RIGHT    Required. Destination side to compare against. May be a folder, or text file.
+        --remember=FILE  Save value of LEFT option to FILE. Useful for comparing SRC to itself through time.
     -h, --help           Prints this help
+    -v, --version        Prints the version (1.1.0)
 ```
 
 ## Development
